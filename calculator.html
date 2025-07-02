@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>INTELLIFLICKS PROFESSIONAL
+            SOLUTION PVT. LTD.| Calculator</title>
+            <link rel="icon" href="favicon-32x32.png" sizes="64x64" type="image/png">
+                <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    </head>
+    <body>
+        <header id="main-header">
+            <div class="container">
+              <nav>
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                  <img src="logo.png" alt="Logo" class="logo-img">
+                  <div class="logo-text">
+                    INTELLIFLICKS PROFESSIONAL<br>
+                    SOLUTION PVT. LTD.
+                  </div>
+                </a>
+          
+                <!-- Hamburger Icon -->
+                <button class="hamburger"><i class="fas fa-bars"></i></button>
+          
+                <!-- Navigation Links -->
+                <ul class="nav-links">
+                  <li><a href="index.html" >Home</a></li>
+                  <li><a href="services.html" >Services</a></li>
+                  <li><a href="calculator.html" class="active">Calculator</a></li>
+                  <li><a href="enquiry.html">Enquiry</a></li>
+                  <li><a href="testimonials.html">Testimonials</a></li>
+                  <li><a href="experts.html">Experts</a></li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Loan Calculator</h1>
+            <p>Estimate your monthly payments and total interest with our easy-to-use loan calculator</p>
+        </div>
+    </section>
+
+    <section class="feature-strip">
+        <div class="container">
+            <div class="strip-items">
+                <div class="strip-item">
+                    <i class="fas fa-calculator"></i>
+                    <span>Accurate Calculations</span>
+                </div>
+                <div class="strip-item">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>Adjustable Parameters</span>
+                </div>
+                <div class="strip-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Visual Breakdowns</span>
+                </div>
+                <div class="strip-item">
+                    <i class="fas fa-file-download"></i>
+                    <span>Save Results</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-tabs">
+                <button class="tab-btn active" data-tab="personal">Personal Loan</button>
+                <button class="tab-btn" data-tab="home">Home Loan</button>
+                <button class="tab-btn" data-tab="auto">Auto Loan</button>
+                <button class="tab-btn" data-tab="business">Business Loan</button>
+            </div>
+            
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="loan-amount">Loan Amount</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                            <input type="number" id="loan-amount" class="form-control" value="1000000" min="10000" max="50000000">
+                        </div>
+                        <input type="range" id="loan-amount-slider" class="range-slider" min="10000" max="50000000" step="10000" value="1000000">
+                        <div class="range-labels">
+                            <span>₹10,000</span>
+                            <span>₹5,00,00,000</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="interest-rate">Interest Rate (%)</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-percentage"></i>
+                            <input type="number" id="interest-rate" class="form-control" value="10.5" min="0.1" max="30" step="0.1">
+                        </div>
+                        <input type="range" id="interest-rate-slider" class="range-slider" min="0.1" max="30" step="0.1" value="10.5">
+                        <div class="range-labels">
+                            <span>0.1%</span>
+                            <span>30%</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="loan-term">Loan Term (years)</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                            <input type="number" id="loan-term" class="form-control" value="5" min="1" max="30">
+                        </div>
+                        <input type="range" id="loan-term-slider" class="range-slider" min="1" max="30" step="1" value="5">
+                        <div class="range-labels">
+                            <span>1 year</span>
+                            <span>30 years</span>
+                        </div>
+                    </div>
+                    <button id="calculate-btn" class="btn btn-primary">Calculate</button>
+                </div>
+                <div class="calculator-results">
+                    <h3>Loan Summary</h3>
+                    <div class="result-item">
+                        <span class="result-label">Monthly Payment:</span>
+                        <span class="result-value" id="monthly-payment">₹21,461.96</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total Payment:</span>
+                        <span class="result-value" id="total-payment">₹12,87,717.60</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total Interest:</span>
+                        <span class="result-value" id="total-interest">₹2,87,717.60</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Interest Rate:</span>
+                        <span class="result-value" id="rate-display">10.50%</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Loan Term:</span>
+                        <span class="result-value" id="term-display">5 years</span>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="payment-chart"></canvas>
+                    </div>
+                    
+                    <div class="calculator-actions">
+                        <button id="save-results" class="btn"><i class="fas fa-download"></i> Save Results</button>
+                        <a href="enquiry.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="amortization-table-container">
+                <h3>Amortization Schedule</h3>
+                <div class="table-responsive">
+                    <table id="amortization-table" class="amortization-table">
+                        <thead>
+                            <tr>
+                                <th>Payment #</th>
+                                <th>Payment Date</th>
+                                <th>Payment Amount</th>
+                                <th>Principal</th>
+                                <th>Interest</th>
+                                <th>Remaining Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Amortization data will be filled by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="loan-comparison">
+        <div class="container">
+            <div class="section-title">
+                <h2>Compare Loan Options</h2>
+                <p>See how different loan parameters affect your monthly payments</p>
+            </div>
+            
+            <div class="comparison-container">
+                <div class="comparison-chart-container">
+                    <canvas id="comparison-chart"></canvas>
+                </div>
+                <div class="comparison-controls">
+                    <div class="comparison-control">
+                        <label>Compare by:</label>
+                        <div class="button-group">
+                            <button class="compare-btn active" data-compare="term">Loan Term</button>
+                            <button class="compare-btn" data-compare="rate">Interest Rate</button>
+                            <button class="compare-btn" data-compare="amount">Loan Amount</button>
+                        </div>
+                    </div>
+                    <div class="comparison-info">
+                        <p>Adjust the sliders above to see how changes affect your monthly payment and total interest paid.</p>
+                        <p>Click "Save Results" to download a detailed breakdown of your loan calculation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="calculator-faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about loans and calculations</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How is the monthly payment calculated?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The monthly payment is calculated using the standard amortization formula:</p>
+                        <p class="formula">PMT = P × [r(1+r)^n] ÷ [(1+r)^n - 1]</p>
+                        <p>Where:</p>
+                        <ul>
+                            <li>PMT = Monthly payment</li>
+                            <li>P = Principal (loan amount)</li>
+                            <li>r = Monthly interest rate (annual rate divided by 12)</li>
+                            <li>n = Total number of payments (loan term in years × 12)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Why does the interest rate make such a big difference?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Even a small change in interest rate can significantly impact your monthly payment and the total amount you'll pay over the life of the loan. This is because interest compounds over time, and the effect is magnified with longer loan terms.</p>
+                        <p>For example, on a ₹25,00,000 home loan with a 20-year term, a 1% difference in interest rate could mean paying several lakhs more in total interest.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Should I choose a shorter or longer loan term?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>This depends on your financial situation and goals:</p>
+                        <ul>
+                            <li><strong>Shorter term:</strong> Higher monthly payments but less total interest paid and faster debt freedom</li>
+                            <li><strong>Longer term:</strong> Lower monthly payments but more total interest paid over the life of the loan</li>
+                        </ul>
+                        <p>Use our calculator to compare different scenarios and find the right balance for your budget.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How accurate is this calculator?</h3>
+                        <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our calculator provides a good estimate of your loan payments based on the information you provide. However, actual loan terms may vary based on:</p>
+                        <ul>
+                            <li>Your credit score and history</li>
+                            <li>Lender-specific policies and fees</li>
+                            <li>Loan processing fees and other charges</li>
+                            <li>Prepayment options and penalties</li>
+                        </ul>
+                        <p>For a precise calculation specific to your situation, we recommend speaking with one of our loan advisors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="apply-strip">
+        <div class="carousel">
+          <div class="carousel-item">
+            <h3><i class="fas fa-bolt"></i> Quick Disbursal</h3>
+            <p>Get your loan amount credited within 24–48 hours of approval.</p>
+          </div>
+          <div class="carousel-item">
+            <h3><i class="fas fa-thumbs-up"></i> Trusted by Thousands</h3>
+            <p>Our customers love our hassle-free loan process.</p>
+          </div>
+          <div class="carousel-item">
+            <h3><i class="fas fa-chart-line"></i> Improve Your Credit</h3>
+            <p>Timely repayments help boost your credit score easily.</p>
+          </div>
+          <div class="carousel-item">
+            <h3><i class="fas fa-hand-holding-usd"></i> Low EMIs</h3>
+            <p>Choose flexible terms with the lowest possible monthly payments.</p>
+          </div>
+        </div>
+    
+        <div class="apply-content">
+          <h2>Ready to Make Your Financial Move?</h2>
+          <a href="enquiry.html">
+            <button class="apply-btn">Apply Now</button>
+          </a>
+                  </div>
+      </section>
+      <style>
+        
+    
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    
+        .apply-strip {
+          position: relative;
+          background: linear-gradient(90deg, #003973, #E5E5BE);
+          color: white;
+          padding: 2rem 1rem;
+          overflow: hidden;
+          margin-bottom: 10px;
+        }
+    
+        .carousel {
+          display: flex;
+          gap: 2rem;
+          animation: scrollText 20s linear infinite;
+        }
+    
+        @keyframes scrollText {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-100%); }
+        }
+    
+        .carousel-item {
+          min-width: 300px;
+          background: rgba(255, 255, 255, 0.1);
+          padding: 1rem;
+          border-radius: 10px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+    
+        .carousel-item h3 {
+          margin-bottom: 0.5rem;
+          font-size: 1.25rem;
+        }
+    
+        .apply-content {
+          text-align: center;
+          margin-top: 2rem;
+        }
+    
+        .apply-content h2 {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
+    
+        .apply-btn {
+          background: #203cc7;
+          color: #ffffff;
+          padding: 0.75rem 2rem;
+          border: none;
+          border-radius: 30px;
+          font-weight: bold;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+        }
+    
+        .apply-btn:hover {
+          background: #07bdff;
+          transform: scale(1.05);
+        }
+    
+        @media (max-width: 768px) {
+          .carousel {
+            flex-direction: column;
+            animation: none;
+          }
+        }
+      </style>
+
+    <section class="contact-options">
+        <div class="container">
+            <div class="section-title">
+                <h2>Need Help with Your Loan?</h2>
+                <p>Our financial experts are ready to assist you</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Speak directly with our loan specialists</p>
+                    <a href="tel:+919876543210" class="btn btn-primary">+91 98765 43210</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Chat with us for quick responses</p>
+                    <a href="https://wa.me/919876543210?text=Hello%20FinanceEase,%20I%20have%20a%20question%20about%20loans." class="btn btn-primary">Send Message</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>Send us your questions anytime</p>
+                    <a href="mailto:accounts@intelliflicks.in" class="btn btn-primary">accounts@intelliflicks.in</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>INTELLIFLICKS PROFESSIONAL<br>
+                        SOLUTION PVT. LTD.</h4>
+                    <p>Providing financial solutions tailored to your needs since 2010. We're committed to helping you achieve your financial goals.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="calculator.html">Calculator</a></li>
+                        <li><a href="enquiry.html">Apply Now</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="experts.html">Experts</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Loan Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#personal">Personal Loans</a></li>
+                        <li><a href="services.html#home">Home Loans</a></li>
+                        <li><a href="services.html#auto">Auto Loans</a></li>
+                        <li><a href="services.html#business">Business Loans</a></li>
+                        <li><a href="services.html#education">Education Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i>PLOT NO C-67E, SECOND FLOOR KH NO-171, NAVADA HOUSING COMPLEX , VILL-NAWADA, UTTAM NAGAR, NEW DELHI, NEAR BANK OF BARODA,DELHI-110059 </li>
+                        <li>
+                            <i class="fas fa-phone"></i> 
+                            <a href="tel:+918595806257" class="footer-contact-link">+91 8595806257</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i> 
+                            <a href="https://wa.me/918595806257" class="footer-contact-link" target="_blank" rel="noopener noreferrer">WhatsApp Chat</a>
+                        </li>
+                        
+                        <li>
+                            <i class="fas fa-envelope"></i> 
+                            <a href="mailto:loansupport@intelliflicks.in" class="footer-contact-link">loansupport@intelliflicks.in</a>
+                        </li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 5:00 PM</li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 INTELLIFLICKS PROFESSIONAL
+                    SOLUTION PVT. LTD. ,  All rights reserved.</p>
+            
+                    <a href="T&C/T&C.html">Terms of Conditions</a>
+                    <a href="P&P/P&P.html">Privacy Policy</a>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/calculator.js"></script>
+    <!-- Floating Contact Buttons -->
+<div class="floating-contact">
+    <a href="tel:+918595806257" class="floating-btn call-btn" aria-label="Call us">
+        <i class="fas fa-phone-alt"></i>
+        <span class="floating-tooltip">Call Us</span>
+    </a>
+    <a href="https://wa.me/918595806257?text=Hello%20FinanceEase,%20I'm%20interested%20in%20your%20loan%20services." 
+    class="floating-btn whatsapp-btn" 
+    aria-label="WhatsApp us" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    onclick="window.open(this.href, '_blank'); return false;">
+     <i class="fab fa-whatsapp"></i>
+     <span class="floating-tooltip">WhatsApp</span>
+ </a>
+</div>
+
+</body>
+</html>
